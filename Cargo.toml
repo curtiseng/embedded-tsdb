@@ -5,4 +5,21 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[workspace]
+members = [
+    "crates/cluster",
+    "crates/metadata",
+    "crates/query-engine",
+    "crates/server",
+    "crates/storage",
+    "crates/types",
+]
+exclude = [
+    "local-run",
+]
+
 [dependencies]
+tokio = { version = "1", features = ["full"] }
+arrow = "42.0.0"
+openraft = { git = "https://github.com/datafuselabs/openraft", rev = "98b2606b6bdc1519781833efe226ff3bc3b5114b", features = ["serde"] }
+
