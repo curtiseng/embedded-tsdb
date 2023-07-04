@@ -1,14 +1,50 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
+pub struct Database {
+    name: String,
+    tenant: String,
+    user: User,
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub struct User {
+    username: String,
+    password: String,
+}
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+// refs https://www.skyzh.dev/posts/articles/2022-01-24-rust-type-exercise-in-database-executors-middle/
+pub struct TableScheme {
+    db: Database,
+    name: String,
+    columns: Vec<TableColumn>,
+    tags: Vec<TableTag>,
+    timestamp: TimeUnit,
+}
+
+pub struct TableColumn {
+    pub id: u32,
+    pub name: String,
+    pub column_type: ValueType,
+}
+
+pub struct TableTag {
+    name: String,
+    value: String,
+}
+
+pub enum ValueType {
+    Unknown,
+    Float,
+    Integer,
+    Unsigned,
+    Boolean,
+    String,
+}
+
+pub enum TimeUnit {
+    /// Time in seconds.
+    Second,
+    /// Time in milliseconds.
+    Millisecond,
+    /// Time in microseconds.
+    Microsecond,
+    /// Time in nanoseconds.
+    Nanosecond,
 }

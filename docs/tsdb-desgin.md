@@ -7,4 +7,11 @@
 
 ### Lib
 
-提供scheme，提供query
+提供table scheme，提供query
+
+### Items
+> DB, Table, Device, Tag(倒排索引), Field, Value
+
++ Every db is a tenant
++ Every table is a device model, include tag and field, support consistency
++ Every device is belonged table, with value, and device support quorum

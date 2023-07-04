@@ -20,6 +20,7 @@ exclude = [
 
 [dependencies]
 tokio = { version = "1", features = ["full"] }
-arrow = "42.0.0"
-openraft = { git = "https://github.com/datafuselabs/openraft", rev = "98b2606b6bdc1519781833efe226ff3bc3b5114b", features = ["serde"] }
+arrow = "41.0.0"
+datafusion = "26.0.0"
+sled = "0.34.7"
 
