@@ -13,6 +13,7 @@ members = [
     "crates/server",
     "crates/storage",
     "crates/types",
+    "crates/mvcc",
 ]
 exclude = [
     "local-run",
